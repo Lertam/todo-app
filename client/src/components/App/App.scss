@@ -1,0 +1,42 @@
+@import "../../variables";
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+.container {
+    width: 500px;
+    // height: 500px;
+    box-shadow: 2px 2px 15px gray;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    text-align: center;
+
+    .status {
+        padding: .5rem
+    }
+
+    & .user-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        span {
+            padding: .5rem;
+        }
+
+        & button {
+            background-color: $primaryColor;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            padding: .5rem;
+        }
+    }
+}

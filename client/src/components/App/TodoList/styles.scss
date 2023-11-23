@@ -1,0 +1,125 @@
+@import "../../../variables";
+
+.todo-list {
+    .no-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+    &-inner,
+    .no-items {
+        margin: 1rem auto;
+        min-height: 218px;
+    }
+    .todo-item {
+        margin-bottom: 1rem;
+        border: 1px solid lightgrey;
+        box-shadow: 1px 1px 5px lightgrey;
+        padding: 0.5rem;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        .task {
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            font-size: 0.85rem;
+            color: darkgray;
+            text-align: left;
+            cursor: default;
+
+            span.edited {
+                margin-left: 1rem;
+            }
+        }
+
+        &:hover {
+            button {
+                display: block;
+            }
+        }
+        button {
+            display: none;
+            position: absolute;
+            padding: 0;
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            right: 0.5rem;
+            top: 0.5rem;
+            opacity: 0.5;
+
+            &.completed {
+                display: block;
+                opacity: 1;
+                color: red;
+            }
+
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        form {
+            display: flex;
+            justify-content: flex-start;
+            padding: 0;
+            margin: 0;
+            flex-direction: row;
+            input {
+                font-size: 1.2rem;
+                margin-bottom: 0;
+                padding: .25rem;
+                outline: none;
+            }
+            button{
+                display: block;
+                position: relative;
+                opacity: 1;
+                top: auto;
+                right: auto;
+                padding: .25rem;
+                border: 1px solid gray;
+                background-color: $primaryColor;
+            }
+        }
+    }
+}
+
+.pagination {
+    button {
+        background: transparent;
+        border: 1px solid cadetblue;
+        border-radius: 0;
+        outline: none;
+        cursor: pointer;
+        width: 2rem;
+        height: 2rem;
+
+        &:first-child {
+            border-top-left-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        &:last-child {
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        &.active {
+            background: $primaryColor;
+        }
+    }
+}
